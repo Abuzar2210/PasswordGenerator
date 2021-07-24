@@ -13,6 +13,15 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+
+// Characters allowed to be used
+var uppercaseChar = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var lowercaseChar = ("abcdefghijklmnopqrstuvwxyz")
+var numberChar = ("1234567890")
+var speicalChar = ("!@#$%^&*()+={}[]")
+var passChar = "";
+var constChar = [];
+
 // Function to generate password
 function generatePassword(){
     var passwordLength = Number(window.prompt("How long do you want your password to be? Please choose between 8 to 128 characters"));
@@ -22,3 +31,27 @@ function generatePassword(){
     }
 
 }
+
+var uppercaseCon = (window.confirm ("Would you like your password to contain uppercase letters?"));
+var lowercaseCon = (window.confirm ("Would you like your password to contain lowercase letters?"));
+var numberCon =  (window.confirm ("Would you like your password to contain numbers?"));
+var speicalCon = (window.confirm ("Would you like your password to contain speical characters?"));
+
+
+var randomPassword = ""; 
+
+//possible combinations for passwords
+
+if(uppercaseCon){
+    passChar += uppercaseChar; constChar.push(uppercaseChar.charAt(Math.floor(Math.random()*uppercaseChar.length)))
+}
+if(lowercaseCon){
+    passChar += lowercaseChar; constChar.push(lowercaseChar.charAt(Math.floor(Math.random()*lowercaseChar.length)))
+}
+if(numberCon){
+    passChar += numberChar; constChar.push(numberChar.charAt(Math.floor(Math.random()*numberChar.length)))
+}
+if(speicalChar){
+    passChar += speicalChar; constChar.push(speicalChar.charAt(Math.floor(Math.random()*speicalChar.length)))
+}
+
